@@ -6,9 +6,12 @@ import router from './router'
 import '@/assets/scss/index.scss'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import moment from 'moment'
 
 Vue.use(ElementUI)
 Vue.config.productionTip = false
+Vue.prototype.$moment = moment
+moment.lang('zh-cn')
 
 /* eslint-disable no-new */
 new Vue({

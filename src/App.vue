@@ -6,7 +6,7 @@
           <img src="http://img.zcool.cn/community/0490ca555e8d6f000001fbab9418d5.jpg@160w_160h_1c_1e_1o_100sh.jpg">
           <span class="place">教205</span>
       </div>
-      <span class="time">2018-01-12 14:30</span>
+      <span class="time">{{currentTime}}</span>
     </div>
     <!-- /全局头部 -->
     <!-- body -->
@@ -27,8 +27,7 @@
         </router-link>
         <router-link to="/main/AttendModel" class="tab-item" style="border-right: 1px solid #5acacf;">
           <div>
-            <!-- <i class="iconfont icon-icon"></i> -->
-            <i class="iconfont icon-laoshirenzheng1"></i>
+            <i class="iconfont icon-icon"></i>
             <span>考勤</span>
           </div>
         </router-link>
@@ -53,7 +52,32 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data () {
+    return {
+      currentTime: ''
+    }
+  },
+  mounted () {
+    setInterval(() => {
+      this.changeTime()
+    }, 1000)
+  },
+  methods: {
+    changeTime () {
+      this.currentTime = this.$moment(new Date()).format('YYYY-MM-DD HH:mm dddd')
+      return this.currentTime
+      // let currentTime = new Date()
+      // let year = currentTime.getFullYear()
+      // let month = currentTime.getMonth() + 1 < 10 ? `0${currentTime.getMonth() + 1}` : currentTime.getMonth() + 1
+      // let date = currentTime.getDate()
+      // let hour = currentTime.getHours()
+      // let min = currentTime.getMinutes() < 10 ? `0${currentTime.getMinutes()}` : currentTime.getMinutes()
+      // let day = currentTime.getDay()
+      // let showDay = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+      // this.currentTime = `${year}-${month}-${date} ${hour}:${min} ${showDay[day]}`
+    }
+  }
 }
 </script>
 
@@ -121,7 +145,9 @@ export default {
     align-items: center;
     justify-content: center;
     color: #666;
-    // box-shadow: 3px 0 3px #5acacf;
+    i {
+      font-size: 0.2rem;
+    }
   }
   .router-link-active {
     width: 20%;
@@ -131,8 +157,12 @@ export default {
     justify-content: center;
     color: #fff;
     box-shadow: -3px 0 3px #666;
-    text-shadow: -2px 0 2px #666;
+    text-shadow: -3px 0 2px #666;
     background: #5acacf;
+     i {
+      font-size: 0.2rem;
+      text-shadow: -3px 0 2px #666;
+    }
   }
 }
 </style>

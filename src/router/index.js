@@ -15,11 +15,11 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/AttendModel'
+      redirect: '/main/AttendModel'
     },
     {
       path: '*',
-      redirect: '/AttendModel'
+      redirect: '/main/AttendModel'
     },
     {
       path: '/main/AttendModel',

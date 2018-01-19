@@ -3,7 +3,7 @@
     <div class="association-box" v-for="(item,index) in 9" :key="index">
       <img src="http://img.hb.aicdn.com/95da2d0600d140d2c171ff50b65f9f96a9008c621e801-MmYDtd_fw658">
       <div class="box-info">
-        <p>动漫社{{i}}</p>
+        <p>动漫社</p>
         <p class="box-intro">由一群热爱动画、漫画、游代收款if寄哦ID经费戏的在校学生自发成立，并在陕西科技大学镐京学院团委的领导和全院师生的监督管理下开展活动</p>
       </div>
     </div>
@@ -36,7 +36,7 @@ export default {
       margin: 0 0.4rem 0.4rem 0;
       border-radius: 10px;
       box-shadow: 5px 5px 5px #666;
-      background: #ffffd0;
+      background: #fff;
       img {
         width: 35%;
         height: 100%;

@@ -4,6 +4,7 @@
       <div class="g_tips" @touchstart = "handleTouchStart" @touchmove = "handleTouchMove" @touchend = "handleTouchEnd">
         <span>该教室今日无课，同学们可自行使用</span>
         <span>注意爱护学校公共设施及教室卫生</span>
+        <img src="../assets/images/occupy.png">
       </div>
       <notice-template></notice-template>
     </div>
@@ -71,4 +72,11 @@ export default {
 }
 </script>
 <style>
+.g_tips img {
+  width: 1.7rem;
+  height: 0.4rem;
+  position: absolute;
+  right: 5%;
+  bottom: 35%;
+}
 </style>

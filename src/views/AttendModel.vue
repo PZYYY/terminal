@@ -6,7 +6,7 @@
               <div class="camera">人脸识别 </div>
               <div class="urgent-notice">
                 <ul>
-                  <li><i class="iconfont icon-gonggao"></i> 开始点击副科级第四届奇偶</li>
+                  <li><i class="iconfont icon-gonggao"></i> 紧急通知</li>
                   <!-- <li>紧急公告2：回复的酸辣粉hi金佛IE就</li> -->
                 </ul>
               </div>
@@ -34,10 +34,18 @@
                   <i class="iconfont icon-renqun"></i>
                   <span>实到 <span class="already-num">140</span> 人</span>
                 </span><br>
-                <span>查看详情>>></span>
+                <el-button type="text" @click="dialogTableVisible = true" class="checkDetial">查看详情>>></el-button>
+                <el-dialog title="学生考勤情况" :visible.sync="dialogTableVisible" :modal-append-to-body="false">
+                  <el-table :data="gridData" width="100%">
+                    <el-table-column property="name" label="姓名" min-width="30%"></el-table-column>
+                    <el-table-column property="college" label="学院"></el-table-column>
+                    <el-table-column property="major" label="专业"></el-table-column>
+                    <el-table-column property="state" label="出勤状态" min-width="35%"></el-table-column>
+                  </el-table>
+                </el-dialog>
               </div>
               <!-- 签到成功提示 -->
-              <div class="person-tips" style="display:none">
+              <div class="person-tips">
                 <span>姓名：</span>
                 <span>学号：</span>
                 <span>专业：</span>
@@ -95,29 +103,24 @@
             <hr>
             <div class="class_box2">
               <span class="class-time">10:30</span><br>
-              <span>风控的是酷狗贫困佛光</span>
+              <span>讲文明树新风形势与政策讲座</span>
             </div>
             <hr>
             <div class="class_box1">
               <span class="class-time">14:30</span><br>
-              <span>国家大事结构呢漏电开关</span>
+              <span>讲文明树新风形势与政策讲座</span>
             </div>
             <hr>
             <div class="class_box2">
               <span class="class-time">16:30</span><br>
-              <span>的高IP饿哦IP根据地</span>
+              <span>讲文明树新风形势与政策讲座</span>
             </div>
             <hr>
-            <div class="class_box2">
+            <!-- <div class="class_box1">
               <span class="class-time">16:30</span><br>
               <span>的高IP饿哦IP根据地</span>
             </div>
-            <hr>
-            <div class="class_box2">
-              <span class="class-time">16:30</span><br>
-              <span>的高IP饿哦IP根据地</span>
-            </div>
-            <hr>
+            <hr> -->
           </div>
         </div>
         <notice-template></notice-template>
@@ -132,7 +135,41 @@ export default {
   },
   data () {
     return {
-      oTouch: {} // 触摸对象
+      oTouch: {}, // 触摸对象
+      gridData: [{
+        name: '小王',
+        college: '计算机工程学院',
+        major: '15计算机信息技术与应用',
+        state: 'flase'
+      }, {
+        name: '小王',
+        college: '计算机工程学院',
+        major: '15计算机信息技术与应用',
+        state: 'flase'
+      }, {
+        name: '小王',
+        college: '计算机工程学院',
+        major: '15计算机信息技术与应用',
+        state: 'true'
+      }, {
+        name: '小王',
+        college: '计算机工程学院',
+        major: '15计算机信息技术与应用',
+        state: 'true'
+      }],
+      dialogTableVisible: false,
+      dialogFormVisible: false,
+      form: {
+        name: '',
+        region: '',
+        date1: '',
+        date2: '',
+        delivery: false,
+        type: [],
+        resource: '',
+        desc: ''
+      },
+      formLabelWidth: '120px'
     }
   },
   methods: {
@@ -275,6 +312,14 @@ export default {
 
 .already-num {
   color: #008000;
+}
+
+.checkDetial {
+  font-size: 0.17rem;
+  color: #fff;
+}
+.el-dialog__body {
+  padding-top: 0;
 }
 
 .person-tips {

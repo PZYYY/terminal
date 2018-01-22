@@ -124,7 +124,7 @@ export default {
   box-sizing: border-box;
   font-size: 50px;
   color:#fff;
-  text-shadow: -2px -2px 0 rgba(0, 0, 0, .7);
+  text-shadow: -2px -2px 0 rgba(19, 9, 9, 0.7);
   background:#919a9f;
 }
 .g_tab {

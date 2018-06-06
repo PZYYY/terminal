@@ -15,7 +15,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/main/AttendModel'
+      redirect: '/terminal-inline'
     },
     {
       path: '*',
